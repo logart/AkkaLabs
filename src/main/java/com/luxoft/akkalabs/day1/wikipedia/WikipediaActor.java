@@ -16,7 +16,6 @@ public class WikipediaActor extends UntypedActor {
         if(message instanceof String) {
             String url = (String) message;
             if (url.length() > 8 && url.contains("wikipedia.org")) {
-//                System.out.println(url);
                 popularActor.tell(url, getSelf());
             }
         }

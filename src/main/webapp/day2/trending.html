@@ -46,7 +46,7 @@
 
         <script>
             $(window).load(function () {
-                var socket = new WebSocket('ws://' + window.location.host + "/AkkaLabs/day2/trending");
+                var socket = new WebSocket('ws://' + window.location.host + "/day2/trending");
 
                 var subscribed = false;
                 var subscribedTo;
@@ -93,12 +93,12 @@
                                 socket.send("upvote " + each);
                             });
                             block.append(button)
-                            $("#trend").append(block);
+                            $("#trend").prepend(block);
                         })
 
                     }
                     if (command === "tweet") {
-                        $("#log").append($("<p>").html(data));
+                        $("#log").prepend($("<p>").html(data));
                     }
                 };
 

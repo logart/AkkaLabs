@@ -15,8 +15,6 @@ public class TwitterActor extends UntypedActor {
 
     @Override
     public void onReceive(Object message) throws Exception {
-//        System.out.println(message);
-
         if("get".equals(message)){
             getSender().tell(languages, getSelf());
         }
